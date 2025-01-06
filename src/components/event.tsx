@@ -107,9 +107,8 @@ export const Event = (
                 .format(
                   fromDate(new Date(props.start), getLocalTimeZone()).toDate()
                 )
-                .replace(" AM", "")
-                .replace(" PM", "")}{" "}
-              -{" "}
+              }{" "}
+              - {" "}
               {new DateFormatter(navigator.language, {
                 hour: "numeric",
                 minute: "2-digit",
@@ -117,6 +116,7 @@ export const Event = (
                 fromDate(new Date(props.end), getLocalTimeZone()).toDate()
               )}
             </Typography>
+
           </CardContent>
         </CardActionArea>
       </Card>
@@ -275,8 +275,7 @@ export const EventDialog = ({ eventId, renderTrigger }: EventDialogProps) => {
                             getLocalTimeZone()
                           ).toDate()
                         )
-                        .replace(" AM", "")
-                        .replace(" PM", "")}{" "}
+                      }{" "}
                       -{" "}
                       {new DateFormatter(navigator.language, {
                         hour: "numeric",
@@ -288,7 +287,9 @@ export const EventDialog = ({ eventId, renderTrigger }: EventDialogProps) => {
                         ).toDate()
                       )}
                     </Typography>
-
+                    <Typography>
+                      Interview Via: Google Meet
+                    </Typography>
                     <Button
                       variant="outlined"
                       sx={{ justifyContent: "space-between" }}
